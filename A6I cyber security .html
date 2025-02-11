@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A6I Cyber Security - Launching Soon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        #countdown {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .notify-btn {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .notify-btn:hover {
+            background-color: #ff4500;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="logo.png" alt="A6I Cyber Security Logo" width="200">
+        <h1>🚀 A6I Cyber Security – Launching Soon!</h1>
+        <p>We are preparing to launch something BIG! Stay tuned for cutting-edge cybersecurity & physical security solutions.</p>
+        
+        <div id="countdown"></div>
+
+        <a href="#" class="notify-btn">Notify Me When Live</a>
+    </div>
+
+    <footer>📧 Contact: <a href="mailto:contact@a6icyber.com" style="color: #ff6600;">contact@a6icyber.com</a></footer>
+
+    <script>
+        // Set the launch date (YYYY, MM-1, DD, HH, MM, SS)
+        var launchDate = new Date("March 1, 2025 00:00:00").getTime();
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = launchDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = 
+                days + " Days : " + hours + " Hours : " + minutes + " Minutes : " + seconds + " Seconds ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "🚀 We Are Now Live!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
